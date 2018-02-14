@@ -9,8 +9,10 @@ public class Health : MonoBehaviour {
     public delegate void DiedHandler(Health context);
     public event DiedHandler Died;
 
+	[SerializeField] // for debugging
     float _currentHealth = 100;
 
+	[SerializeField]
     float _maxHealth = 100;
 
     public float CurrentHealth {
