@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyStatus : MonoBehaviour {
     Health _enemyHealth;
 
-    void Awake() {
+    private void Awake() {
         _enemyHealth = GetComponent<Health>();
         _enemyHealth.Died += delegate(Health context) {
             Destroy(context.gameObject);
