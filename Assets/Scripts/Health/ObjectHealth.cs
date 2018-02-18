@@ -2,27 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour {
+public class ObjectHealth : MonoBehaviour {
+    [SerializeField, Tooltip("Current health value")]
+    private float _currentHealth = 100;
+
+    [SerializeField, Tooltip("Max health value")]
+    private float _maxHealth = 100;
+
+    #region Events
     public delegate void DamageHandler(float amount);
     public event DamageHandler Damaged;
 
-    public delegate void DiedHandler(Health context);
+    public delegate void DiedHandler();
     public event DiedHandler Died;
 
     public delegate void HealedHandler(float amount);
     public event HealedHandler Healed;
+    #endregion
 
-	[SerializeField, Tooltip("Current health value")]
-    float _currentHealth = 100;
-
-	[SerializeField, Tooltip("Max health value")]
-    float _maxHealth = 100;
-
-    // For debugging - delete when finished testing
-    // if true, heal
-    // if false, damage
-    public bool Flip = false;
-
+    #region Properties
     public float CurrentHealth {
         get { return _currentHealth; }
         set { _currentHealth = Mathf.Clamp(value, 0, MaxHealth); }
@@ -31,6 +29,12 @@ public class Health : MonoBehaviour {
     public float MaxHealth {
         get { return _maxHealth; }
         set { _maxHealth = Mathf.Max(value, 0); }
+    }
+    #endregion
+
+    /// <summary>Health value is equal to/more than the max health value.</summary>
+    public bool AtFullHealth() {
+        return CurrentHealth >= MaxHealth;
     }
 
     /// <summary>Health value went down.</summary>
@@ -50,25 +54,20 @@ public class Health : MonoBehaviour {
         }
     }
 
-    /// <summary>Health value is equal to/more than the max health value.</summary>
-    public bool AtFullHealth() {
-        return CurrentHealth >= MaxHealth;
-    }
-
     /// <summary>Health value is equal to/less than zero.</summary>
     public bool IsDead() {
         return CurrentHealth <= 0; 
     }
 
-    public void OnDamaged(float amount) {
+    private void OnDamaged(float amount) {
         if (Damaged != null) Damaged(amount);
     }
 
-    public void OnDied() {
-        if (Died != null) Died(this);
+    private void OnDied() {
+        if (Died != null) Died();
     }
 
-    public void OnHealed(float amount) {
+    private void OnHealed(float amount) {
         if (Healed != null) Healed(amount);
     }
 } 

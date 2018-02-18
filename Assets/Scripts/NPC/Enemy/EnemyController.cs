@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour {
     */
 
 	public void SpawnEnemy() {
-        GameObject enemy = Instantiate(enemyPrefab, new Vector3(10, 0, 0), Quaternion.identity);
+        Instantiate(enemyPrefab, new Vector3(0,42, 0), Quaternion.identity);
     }
 
     private void Start() {

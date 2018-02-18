@@ -6,7 +6,7 @@ public class WallController : MonoBehaviour {
 	public GameObject wallPrefab;
 
 	void Start() {
-		Health wallHealth = wallPrefab.GetComponent<Health>();
+		ObjectHealth wallHealth = wallPrefab.GetComponent<ObjectHealth>();
 		wallHealth.MaxHealth = 200;
 		wallHealth.CurrentHealth = 200;
 	}
