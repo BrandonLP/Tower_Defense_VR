@@ -6,8 +6,8 @@ public class EnemyController : MonoBehaviour {
     public GameObject enemyPrefab;
 
 	//amount of seconds between each spawn/wave
-	public float timeForSpawn = 3f;
-	private float timeCounter = 0f;
+	public int timeForSpawn = 3;
+	private int timeCounter = 0;
 
 	//a list of all living enemies
 	private List<ObjectStatus> enemies = new List<ObjectStatus>();
@@ -24,22 +24,21 @@ public class EnemyController : MonoBehaviour {
 	//control waves, increase amount they get stronger, spawn enemies
 
 	//add Transform spawnLocation as a field later
+	//new Vector3(-316.15f, 42.02832f, 306.49f)
 	public void SpawnEnemy(float speedMulti) {
-		GameObject currentEnemy = Instantiate(enemyPrefab, new Vector3(-316.15f, 42.02832f, 306.49f), Quaternion.identity);
-		EnemyMovement eMovement = currentEnemy.GetComponent<EnemyMovement> ();
-		//eMovement.SetSpeed(speedMulti);
+		GameObject currentEnemy = Instantiate(enemyPrefab, new Vector3(-44.2f, 41.67f, -2.3f), Quaternion.identity);
+		//currentEnemy.GetComponent<EnemyMovement>().SetSpeed(speedMulti);
 		enemies.Add (currentEnemy.GetComponent<ObjectStatus> ());
     }
 
     private void Start() {
-		SpawnEnemy (1.0f);
 		timeCounter += timeForSpawn;
     }
 
 	private void Update() {
-		//if (Time.time >= timeCounter) {
-			//SpawnEnemy (1.0f);
-			//timeCounter += timeForSpawn;
-		//}
+		if (Time.time >= timeCounter) {
+			timeCounter += timeForSpawn;
+			SpawnEnemy (1.0f);
+		}
 	}
 }

@@ -32,11 +32,11 @@ public class EnemyMovement : MonoBehaviour {
 	}
 
 	/*multiplies the current speed and other speed things by the newSpeedMultipler*/
-	/*public void SetSpeed(float newSpeedMultiplier) {
+	public void SetSpeed(float newSpeedMultiplier) {
 		_navMeshAgent.speed *= newSpeedMultiplier;
 		_navMeshAgent.angularSpeed *= newSpeedMultiplier;
 		_navMeshAgent.acceleration *= newSpeedMultiplier;
-	}*/
+	}
 
 	/*if a target location is set, then the navmeshagent will go to that vector3*/
 	private void SetDestination() {
