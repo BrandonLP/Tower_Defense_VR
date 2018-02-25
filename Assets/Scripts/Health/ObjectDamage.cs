@@ -27,17 +27,18 @@ public class ObjectDamage : MonoBehaviour {
         Debug.Log("\nHealth after damaged: " + objectHealth.CurrentHealth + "\n*****\n");
     }
 
+    /*
     private void OnCollisionEnter(Collision collision) {
         //Debug.Log("Sword collided with " + collision.gameObject.name);
         ObjectDamaged = collision.gameObject;
         if (ObjectDamaged.tag == "Enemy" || ObjectDamaged.tag == "Player" || ObjectDamaged.tag == "Wall")
             Damage();
-    }
+    }*/
 
-    /*
+    
     private void OnMouseDown() {
         ObjectDamaged = gameObject;
         if (ObjectDamaged.tag == "Enemy" || ObjectDamaged.tag == "Player" || ObjectDamaged.tag == "Wall")
             Damage();
-    }*/
+    }
 }

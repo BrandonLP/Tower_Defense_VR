@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectHealth : MonoBehaviour {
-    [SerializeField, Tooltip("Current health value")]
-    private float _currentHealth = 100;
+    [Tooltip("Current health value")]
+    private float _currentHealth;
 
     [SerializeField, Tooltip("Max health value")]
     private float _maxHealth = 100;
+
+    public Slider healthbar;
 
     #region Events
     public delegate void DamageHandler(float amount);
@@ -32,15 +35,24 @@ public class ObjectHealth : MonoBehaviour {
     }
     #endregion
 
+    private void Start() {
+        CurrentHealth = MaxHealth;
+    }
+
     /// <summary>Health value is equal to/more than the max health value.</summary>
     public bool AtFullHealth() {
         return CurrentHealth >= MaxHealth;
+    }
+
+    public float CalculateHealth() {
+        return CurrentHealth / MaxHealth;
     }
 
     /// <summary>Health value went down.</summary>
     public void Damage(float amount) {
         if (amount > 0 && !IsDead()) {
             CurrentHealth -= amount;
+            healthbar.value = CalculateHealth();
             OnDamaged(amount);
         }
         if (IsDead()) OnDied();
