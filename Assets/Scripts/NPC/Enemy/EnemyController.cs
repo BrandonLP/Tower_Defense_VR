@@ -6,11 +6,17 @@ public class EnemyController : MonoBehaviour {
     public GameObject enemyPrefab;
 
 	//amount of seconds between each spawn/wave
-	public int timeForSpawn = 3;
+	public int timeForSpawn = 30;
+	public float speedMultiplier = 0.1f;
+	private float currentSpeed = 1.0f;
 	private int timeCounter = 0;
+	private int enemyTotal = 10;
+	private int enemyAddition = 3;
 
 	//a list of all living enemies
 	private List<ObjectStatus> enemies = new List<ObjectStatus>();
+
+	private Vector3[] spawnPoints = new Vector3[2];
 
 	/*
 	public void SpawnEnemy(float health) {
@@ -23,22 +29,31 @@ public class EnemyController : MonoBehaviour {
 
 	//control waves, increase amount they get stronger, spawn enemies
 
-	//add Transform spawnLocation as a field later
-	//new Vector3(-316.15f, 42.02832f, 306.49f)
-	public void SpawnEnemy(float speedMulti) {
-		GameObject currentEnemy = Instantiate(enemyPrefab, new Vector3(-44.2f, 41.67f, -2.3f), Quaternion.identity);
-		//currentEnemy.GetComponent<EnemyMovement>().SetSpeed(speedMulti);
+	public void SpawnEnemy(float speedMulti, int spawnCaveIndex) {
+		Vector3 spawnLocation = spawnPoints [spawnCaveIndex];
+		spawnLocation.x += Random.Range (-1, 1);
+		spawnLocation.z += Random.Range (-1, 1);
+		GameObject currentEnemy = Instantiate(enemyPrefab, spawnLocation, Quaternion.identity);
+		currentEnemy.GetComponent<EnemyMovement>().SetSpeed(speedMulti);
 		enemies.Add (currentEnemy.GetComponent<ObjectStatus> ());
     }
 
     private void Start() {
 		timeCounter += timeForSpawn;
+		spawnPoints [0] = new Vector3 (-316.15f, 42.02832f, 306.49f);
+		spawnPoints [1] = new Vector3 (-575.23f, 45.53961f, -199.62f);
     }
 
 	private void Update() {
 		if (Time.time >= timeCounter) {
+			print (timeCounter + " seconds have passed");
+			int index = Random.Range (0, 2);
+			for (int i = 0; i < enemyTotal; i++) {
+				SpawnEnemy (currentSpeed, index);
+			}
+			enemyTotal += enemyAddition;
+			currentSpeed += speedMultiplier;
 			timeCounter += timeForSpawn;
-			SpawnEnemy (1.0f);
 		}
 	}
 }
