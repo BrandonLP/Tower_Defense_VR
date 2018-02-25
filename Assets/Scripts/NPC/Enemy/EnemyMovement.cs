@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour {
 	[Tooltip("Amount enemy speed is multipled by")]
 	public float _enemySpeed = 1.0f;
 
-	NavMeshAgent _navMeshAgent;
+	private NavMeshAgent _navMeshAgent;
 
 	// Use this for initialization
 	private void Start () {
@@ -33,9 +33,7 @@ public class EnemyMovement : MonoBehaviour {
 
 	/*multiplies the current speed and other speed things by the newSpeedMultipler*/
 	public void SetSpeed(float newSpeedMultiplier) {
-		_navMeshAgent.speed *= newSpeedMultiplier;
-		_navMeshAgent.angularSpeed *= newSpeedMultiplier;
-		_navMeshAgent.acceleration *= newSpeedMultiplier;
+		this.GetComponent<NavMeshAgent> ().speed = newSpeedMultiplier;
 	}
 
 	/*if a target location is set, then the navmeshagent will go to that vector3*/
