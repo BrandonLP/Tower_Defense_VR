@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectStatus : MonoBehaviour {
+    private ObjectHealth _health;
+
     public delegate void DiedHandler();
     public event DiedHandler Died;
-
-    private ObjectHealth _health;
 
     public ObjectHealth Health {
         get { return _health; }

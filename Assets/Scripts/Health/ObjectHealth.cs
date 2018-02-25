@@ -10,6 +10,7 @@ public class ObjectHealth : MonoBehaviour {
     [SerializeField, Tooltip("Max health value")]
     private float _maxHealth = 100;
 
+    [Tooltip("Health bar")]
     public Slider healthbar;
 
     #region Events
@@ -62,6 +63,7 @@ public class ObjectHealth : MonoBehaviour {
     public void Heal(float amount) {
         if (amount > 0 && !AtFullHealth()) {
             CurrentHealth += amount;
+            healthbar.value = CalculateHealth();
             OnHealed(amount);
         }
     }

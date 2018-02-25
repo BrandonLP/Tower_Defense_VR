@@ -9,6 +9,8 @@ TagManager:
   - projectile
   - FxTemporaire
   - TeleportIgnore
+  - controller
+  - Wall
   layers:
   - Default
   - TransparentFX

@@ -22,13 +22,13 @@ public class Healing : MonoBehaviour {
 
     private void Awake() {
         Health = gameObject.GetComponent<ObjectHealth>();
-        HealAmount = Health.MaxHealth * (float)0.5;
+        HealAmount = Health.MaxHealth * 0.5f;
     }
 
     public void Heal() {
         //Debug.Log("\n-----\nHealth before healing: " + Health.CurrentHealth);
         Health.Heal(HealAmount);
-        Debug.Log("\nHealth after healing: " + Health.CurrentHealth + "\n-----\n");
+        //Debug.Log("\nHealth after healing: " + Health.CurrentHealth + "\n-----\n");
     }
 
     /*
