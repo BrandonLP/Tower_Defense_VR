@@ -1,56 +1,62 @@
 fileFormatVersion: 2
-guid: 5404b2222a463a64998d735d8d146dbb
-timeCreated: 1517851904
+guid: bf6db0c4bb5c22546a860230f0295417
+timeCreated: 1519698309
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
-    100000: group1
-    100002: group2
-    100004: group3
-    100006: pasted__group1
-    100008: pasted__group2
-    100010: pasted__pasted__group1
-    100012: pasted__pasted__pasted__pCylinder1
-    100014: pasted__pasted__pCylinder1
-    100016: pasted__pCylinder1
-    100018: pCylinder1
-    100020: pPlane3
-    100022: pPlane4
-    100024: //RootNode
-    100026: transform1
-    100028: transform2
-    100030: transform3
-    100032: transform4
-    100034: transform5
-    100036: transform6
-    400000: group1
-    400002: group2
-    400004: group3
-    400006: pasted__group1
-    400008: pasted__group2
-    400010: pasted__pasted__group1
-    400012: pasted__pasted__pasted__pCylinder1
-    400014: pasted__pasted__pCylinder1
-    400016: pasted__pCylinder1
-    400018: pCylinder1
-    400020: pPlane3
-    400022: pPlane4
-    400024: //RootNode
-    400026: transform1
-    400028: transform2
-    400030: transform3
-    400032: transform4
-    400034: transform5
-    400036: transform6
-    2300000: pPlane4
-    3300000: pPlane4
-    4300000: pPlane4
+    100000: Base
+    100002: Outside_Pillar
+    100004: Outside_Pillar1
+    100006: Outside_Pillar2
+    100008: Outside_Pillar3
+    100010: pCube1
+    100012: Roof
+    100014: //RootNode
+    400000: Base
+    400002: Outside_Pillar
+    400004: Outside_Pillar1
+    400006: Outside_Pillar2
+    400008: Outside_Pillar3
+    400010: pCube1
+    400012: Roof
+    400014: //RootNode
+    2100000: phong4
+    2100002: phong3
+    2100004: phong6
+    2100006: phong5
+    2100008: phong7
+    2300000: Base
+    2300002: Outside_Pillar
+    2300004: Outside_Pillar1
+    2300006: Outside_Pillar2
+    2300008: Outside_Pillar3
+    2300010: pCube1
+    2300012: Roof
+    2300014: //RootNode
+    3300000: Base
+    3300002: Outside_Pillar
+    3300004: Outside_Pillar1
+    3300006: Outside_Pillar2
+    3300008: Outside_Pillar3
+    3300010: pCube1
+    3300012: Roof
+    3300014: //RootNode
+    4300000: House
+    4300002: Outside_Pillar
+    4300004: Outside_Pillar1
+    4300006: Outside_Pillar2
+    4300008: Outside_Pillar3
+    4300010: Base
+    4300012: Roof
+    4300014: pCube1
     9500000: //RootNode
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -63,6 +69,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -87,6 +94,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88

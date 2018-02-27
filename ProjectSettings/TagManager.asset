@@ -11,6 +11,7 @@ TagManager:
   - TeleportIgnore
   - controller
   - Wall
+  - Map Items
   layers:
   - Default
   - TransparentFX
