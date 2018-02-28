@@ -9,25 +9,28 @@ public class EnemyMovement : MonoBehaviour {
 	//https://www.youtube.com/watch?v=rKGq42FMV8c
 	//basic mechanics also observed through Mountain God VR code
 
-	[SerializeField]
-	public Transform _targetLocation;
+	Vector3 targetVector;
 
 	[Tooltip("Amount enemy speed is multipled by")]
 	public float _enemySpeed = 1.0f;
 
-	private NavMeshAgent _navMeshAgent;
+	NavMeshAgent _navMeshAgent;
+
+	private int amtOfPoints;
 
 	// Use this for initialization
 	private void Start () {
 		_navMeshAgent = this.GetComponent<NavMeshAgent> ();
 		_navMeshAgent.speed *= _enemySpeed;
+		targetVector = VRTK.VRTK_DeviceFinder.HeadsetTransform ().position;
+		amtOfPoints = 0;
 		if(_navMeshAgent == null)
 		{
 			Debug.LogError("The nav mesh agent component is not attached to " + gameObject.name);
 		}	
 		else
 		{
-			SetDestination();
+			SetDestination(targetVector);
 		}
 	}
 
@@ -37,11 +40,15 @@ public class EnemyMovement : MonoBehaviour {
 	}
 
 	/*if a target location is set, then the navmeshagent will go to that vector3*/
-	private void SetDestination() {
-		if(_targetLocation != null)
-		{
-			Vector3 targetVector = _targetLocation.transform.position;
-			_navMeshAgent.SetDestination(targetVector);
-		}
+	public void SetDestination(Vector3 tVector) {
+		_navMeshAgent.SetDestination(tVector);
+	}
+
+	public void SetPointVal (int numPoints) {
+		amtOfPoints = numPoints;
+	}
+
+	public int GetPointVal () {
+		return amtOfPoints;
 	}
 }
