@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour {
 	public int timeForSpawn = 30;
 
 	private int timeCounter = 0;
-
+    private int shortCounter = 0;
 	//how much the mobs speed increase w/each wave
 	public float speedMultiplier = 0.1f;
 
@@ -41,6 +41,8 @@ public class EnemyController : MonoBehaviour {
 
 	private Vector3 currentPlayerLocation;
 
+    private int index;
+
 	/*
 	public void SpawnEnemy(float health) {
         GameObject enemy = Instantiate(enemyPrefab, new Vector3(0, 42, 0), Quaternion.identity);
@@ -54,32 +56,39 @@ public class EnemyController : MonoBehaviour {
 
 	public void SpawnEnemy(float speedMulti, int spawnCaveIndex) {
 		Vector3 spawnLocation = spawnPoints [spawnCaveIndex];
-		spawnLocation.x += Random.Range (-1, 1);
-		spawnLocation.z += Random.Range (-1, 1);
+		//spawnLocation.x += Random.Range (-5, 5);
+		//spawnLocation.z += Random.Range (-5, 5);
 		GameObject currentEnemy = Instantiate(enemyPrefab, spawnLocation, Quaternion.identity);
 		currentEnemy.GetComponent<EnemyMovement>().SetSpeed(speedMulti);
 		currentEnemy.GetComponent<EnemyMovement> ().SetPointVal (points);
 		enemies.Add (currentEnemy.GetComponent<ObjectStatus> ());
     }
 
+    private IEnumerator SpawnWave () {
+        for (int i = 0; i < enemyTotal; i++) {
+            SpawnEnemy(currentSpeed, index);
+            yield return new WaitForSeconds(1);
+        }
+
+    }
+
     private void Start() {
 		timeCounter += timeForSpawn;
+        shortCounter += timeForSpawn;
 		timeLTCounter += timeLocationTracker;
-		spawnPoints [0] = new Vector3 (-313.96f, 40.19f, 306.44f);
-		spawnPoints [1] = new Vector3 (-575.5f, 45.042f, -197.88f);
+		spawnPoints [0] = new Vector3 (-313f, 41f, 304f);
+		spawnPoints [1] = new Vector3 (-575f, 45f, -197f);
 		currentPlayerLocation = VRTK.VRTK_DeviceFinder.HeadsetTransform ().position;
     }
 
 	private void Update() {
 		if (Time.time >= timeCounter) {
-			int index = Random.Range (0, 2);
-			for (int i = 0; i < enemyTotal; i++) {
-				SpawnEnemy (currentSpeed, index);
-			}
+            timeCounter += timeForSpawn;
+            index = Random.Range (0, 2);
+            StartCoroutine(SpawnWave());
 			enemyTotal += enemyAddition;
 			currentSpeed += speedMultiplier;
 			points += pointsInc;
-			timeCounter += timeForSpawn;
 		}
 		if (Time.time >= timeLTCounter) {
 			if (currentPlayerLocation != VRTK.VRTK_DeviceFinder.HeadsetTransform ().position) {

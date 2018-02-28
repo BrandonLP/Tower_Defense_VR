@@ -9,10 +9,10 @@ public class ShopMechanics : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GetComponent<VRTK_InteractableObject>().InteractableObjectUnsnappedFromDropZone += new ControllerInteractionEventHandler(UnsnappedFromZone);
+		GetComponent<VRTK_InteractableObject>().InteractableObjectUnsnappedFromDropZone += new InteractableObjectEventHandler(UnsnappedFromZone);
 	}
 
-	private void UnsnappedFromZone() {
+	private void UnsnappedFromZone(object sender, InteractableObjectEventArgs e) {
 		if (GameObject.Find ("EnemyController").GetComponent<PointTracker> ().currentPoints >= _price) {
 			GameObject.Find ("EnemyController").GetComponent<PointTracker> ().currentPoints -= _price;
 		} else {
