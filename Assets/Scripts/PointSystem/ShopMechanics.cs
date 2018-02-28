@@ -4,7 +4,7 @@ using UnityEngine;
 using VRTK;
 
 public class ShopMechanics : MonoBehaviour {
-	[Tooltip("How much the item costs")]
+	[SerializeField]
 	private int _price;
 
 	// Use this for initialization
