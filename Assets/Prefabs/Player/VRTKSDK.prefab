@@ -223,6 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4719315348407158}
   - component: {fileID: 114706208225129120}
+  - component: {fileID: 114976503778530934}
   m_Layer: 0
   m_Name: PlayAreaScripts
   m_TagString: Untagged
@@ -259,9 +260,12 @@ GameObject:
   - component: {fileID: 23750611108303112}
   - component: {fileID: 33504414764516068}
   - component: {fileID: 114275024506962386}
+  - component: {fileID: 114375803598602724}
+  - component: {fileID: 114178655133597104}
+  - component: {fileID: 114245618598661538}
   m_Layer: 0
   m_Name: '[CameraRig]'
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -275,12 +279,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4405023335210636}
   - component: {fileID: 114374424049053992}
-  - component: {fileID: 114100913691770720}
-  - component: {fileID: 114450826933551294}
-  - component: {fileID: 114700775253821888}
   m_Layer: 0
   m_Name: VRTKSDK
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -588,8 +589,8 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.05
-  far clip plane: 1000
-  field of view: 60
+  far clip plane: 500
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -781,17 +782,6 @@ MonoBehaviour:
   controllerAttachPoint: {fileID: 0}
   controllerEvents: {fileID: 0}
   interactTouch: {fileID: 0}
---- !u!114 &114100913691770720
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1786913990464268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bed96a0a4d0115418ed01ddf0a799a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114142934427936284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -857,6 +847,17 @@ MonoBehaviour:
   verbose: 0
   createComponents: 1
   updateDynamically: 1
+--- !u!114 &114178655133597104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1783678380033762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bed96a0a4d0115418ed01ddf0a799a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114180867435290066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -942,6 +943,19 @@ MonoBehaviour:
     fallbackTypeName: VRTK.SDK_FallbackController
     typeName: VRTK.SDK_SteamVRController
     descriptionIndex: 0
+--- !u!114 &114245618598661538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1783678380033762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b890f78ca8e68445bdf88c99711318d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  healthbar: {fileID: 114572317691115684}
 --- !u!114 &114257146266508944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1060,6 +1074,17 @@ MonoBehaviour:
   autoLoadSetup: 1
   setups:
   - {fileID: 114207828940383542}
+--- !u!114 &114375803598602724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1783678380033762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebdf3bbdfb3702e49847a79fce2b0436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114390921647998694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1139,19 +1164,6 @@ MonoBehaviour:
   uiClickPressed: 0
   menuPressed: 0
   controllerVisible: 1
---- !u!114 &114450826933551294
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1786913990464268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b890f78ca8e68445bdf88c99711318d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 100
-  healthbar: {fileID: 114572317691115684}
 --- !u!114 &114463720883046464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1354,17 +1366,6 @@ MonoBehaviour:
   maximumCursorScale: {x: Infinity, y: Infinity, z: Infinity}
   customTracer: {fileID: 0}
   customCursor: {fileID: 0}
---- !u!114 &114700775253821888
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1786913990464268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebdf3bbdfb3702e49847a79fce2b0436, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114706208225129120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1446,6 +1447,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   origin: {fileID: 0}
+--- !u!114 &114976503778530934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1745165343839534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 174429e04b0388249a137b2dc0050b66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableTeleport: 1
+  targetListPolicy: {fileID: 0}
+  enableBodyCollisions: 1
+  ignoreGrabbedCollisions: 1
+  ignoreCollisionsWith: []
+  headsetYOffset: 0.2
+  movementThreshold: 0.0015
+  playAreaMovementThreshold: 0.00075
+  standingHistorySamples: 5
+  leanYThreshold: 0.5
+  stepUpYOffset: 0.15
+  stepThicknessMultiplier: 0.5
+  stepDropThreshold: 0.08
+  customRaycast: {fileID: 0}
+  layersToIgnore:
+    serializedVersion: 2
+    m_Bits: 4
+  fallRestriction: 0
+  gravityFallYThreshold: 1
+  blinkYThreshold: 0.15
+  floorHeightTolerance: 0.001
+  fallCheckPrecision: 5
+  teleporter: {fileID: 0}
+  customBodyColliderContainer: {fileID: 0}
+  customFootColliderContainer: {fileID: 0}
 --- !u!124 &124231591410581194
 Behaviour:
   m_ObjectHideFlags: 1

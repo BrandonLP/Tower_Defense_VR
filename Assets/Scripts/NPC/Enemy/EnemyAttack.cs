@@ -13,8 +13,10 @@ public class EnemyAttack : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Wall") {
+            //Debug.Log("enemy hit " + collision.gameObject);
             ObjectHealth damagedObjectHealth = collision.gameObject.GetComponent<ObjectHealth>();
             damagedObjectHealth.Damage(BaseDamage);
+            //Debug.Log(damagedObjectHealth.CurrentHealth);
         }
     }
 }

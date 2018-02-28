@@ -13,8 +13,6 @@ public class ObjectHealth : MonoBehaviour {
     [Tooltip("Health bar")]
     public Slider healthbar;
 
-	GameObject pointSystem;
-
     #region Events
     public delegate void DamageHandler(float amount);
     public event DamageHandler Damaged;
@@ -80,7 +78,6 @@ public class ObjectHealth : MonoBehaviour {
     }
 
     private void OnDied() {
-		GameObject.Find ("EnemyController").GetComponent<PointTracker> ().AddPoints(10);
         if (Died != null) Died();
     }
 

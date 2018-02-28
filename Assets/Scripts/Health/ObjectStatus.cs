@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ObjectStatus : MonoBehaviour {
     private ObjectHealth _health;
+
+    private GameObject pointSystem;
 
     public delegate void DiedHandler();
     public event DiedHandler Died;
@@ -20,7 +23,22 @@ public class ObjectStatus : MonoBehaviour {
     
     private void Die() {
         OnDied();
-        Destroy(gameObject);
+        if (gameObject.tag == "Player") {
+            GameOver();
+        } else {
+            Debug.Log("DESTROYED???");
+            Destroy(gameObject);
+        }
+        /*
+        if (this.tag == "Enemy") {
+            int pts = this.GetComponent<EnemyMovement>().GetPointVal();
+            GameObject.Find("EnemyController").GetComponent<PointTracker>().AddPoints(pts);
+            GameObject.Find("EnemyController").GetComponent<EnemyController>().GetEnemiesList().Remove(this.GetComponent<ObjectStatus>());
+        }*/
+    }
+
+    private void GameOver() {
+        SceneManager.LoadScene("Scene/GameOver");
     }
 
     private void OnDied() {
