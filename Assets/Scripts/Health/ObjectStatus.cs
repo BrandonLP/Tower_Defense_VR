@@ -26,7 +26,6 @@ public class ObjectStatus : MonoBehaviour {
         if (gameObject.tag == "Player") {
             GameOver();
         } else {
-            Debug.Log("DESTROYED???");
             Destroy(gameObject);
         }
         /*
