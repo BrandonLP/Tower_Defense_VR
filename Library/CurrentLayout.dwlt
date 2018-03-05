@@ -45,7 +45,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 26
+  controlID: 48
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -64,8 +64,8 @@ MonoBehaviour:
     y: 0
     width: 519
     height: 1307
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -89,8 +89,8 @@ MonoBehaviour:
     y: 0
     width: 505
     height: 790
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 27
+  controlID: 49
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 28
+  controlID: 50
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -327,18 +327,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefabs/Weapons
+    - Assets/Prefabs/Player
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/Weapons
+  - Assets/Prefabs/Player
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Steph\Documents\Workspace\Tower_Defense_VR
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 223}
-    m_SelectedIDs: 56380000
-    m_LastClickedID: 14422
+    scrollPos: {x: 0, y: 180}
+    m_SelectedIDs: fc390000
+    m_LastClickedID: 14844
     m_ExpandedIDs: 00000000f22b0000742c0000d62d00005e2e0000a02f000052300000a4300000fa3000002a310000fe310000b4320000f232000080330000cc330000e0360000e2360000b4370000fc370000c2380000f2380000fe3800004e390000043a0000123a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -485,9 +485,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4c3d0000
-    m_LastClickedID: 15692
-    m_ExpandedIDs: 98fbffff00000000
+    m_SelectedIDs: 14f0ffff
+    m_LastClickedID: -4076
+    m_ExpandedIDs: beefffffd2efffffd8efffff14f0ffff16f0ffff4af0ffff98fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -538,14 +538,14 @@ MonoBehaviour:
     height: 769
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 28.20260984837949
+  lastFramingTime: 677.2926030732472
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -19.385347, y: 42.93973, z: -26.614536}
+    m_Target: {x: -18.44908, y: 14.197212, z: 27.584906}
     speed: 2
-    m_Value: {x: -19.385347, y: 42.93973, z: -26.614536}
+    m_Value: {x: -18.44908, y: 14.197212, z: 27.584906}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -569,19 +569,19 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.32990512, y: 0.05941911, z: -0.020811561, w: 0.9419123}
+    m_Target: {x: 0.32608205, y: 0.035440557, z: -0.012234177, w: 0.9445977}
     speed: 2
-    m_Value: {x: -0.32990512, y: -0.05941911, z: 0.02081156, w: -0.9419123}
+    m_Value: {x: 0.32608205, y: 0.035440557, z: -0.012234177, w: 0.9445977}
   m_Size:
-    m_Target: 19.255135
+    m_Target: 120.41108
     speed: 2
-    m_Value: 19.255135
+    m_Value: 120.41108
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
+  m_LastSceneViewRotation: {x: 0.022469899, y: -0.58040804, z: -0.016024629, w: -0.81385803}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
