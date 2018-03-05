@@ -28,12 +28,13 @@ public class ObjectStatus : MonoBehaviour {
         } else {
             Destroy(gameObject);
         }
-        /*
+
         if (this.tag == "Enemy") {
             int pts = this.GetComponent<EnemyMovement>().GetPointVal();
-            GameObject.Find("EnemyController").GetComponent<PointTracker>().AddPoints(pts);
+            print(pts);
+            GameObject.Find("EnemyController").GetComponent<PointTracker>().AddPoints(1);
             GameObject.Find("EnemyController").GetComponent<EnemyController>().GetEnemiesList().Remove(this.GetComponent<ObjectStatus>());
-        }*/
+        }
     }
 
     private void GameOver() {

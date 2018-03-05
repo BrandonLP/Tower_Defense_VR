@@ -14,9 +14,9 @@ public class ShopMechanics : MonoBehaviour {
 
 	private void UnsnappedFromZone(object sender, InteractableObjectEventArgs e) {
 		if (GameObject.Find ("EnemyController").GetComponent<PointTracker> ().currentPoints >= _price) {
-			GameObject.Find ("EnemyController").GetComponent<PointTracker> ().currentPoints -= _price;
+            GameObject.Find("EnemyController").GetComponent<PointTracker>().BuyItem(_price);
 		} else {
-			Destroy (this);
+            Destroy (gameObject);
 		}
 	}
 }

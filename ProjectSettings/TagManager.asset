@@ -12,6 +12,7 @@ TagManager:
   - controller
   - Wall
   - Map Items
+  - Sword
   layers:
   - Default
   - TransparentFX
