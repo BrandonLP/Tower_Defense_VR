@@ -34,12 +34,13 @@ public class EnemyController : MonoBehaviour {
 	private Vector3[] spawnPoints = new Vector3[2];
 
 	//points that the enemy is worth
-	private int points = 1;
+	private int points = 2;
 
 	//inc that the points increase with mob strength
-	private int pointsInc = 1;
+	//private int pointsInc = 1;
 
-	private Vector3 currentPlayerLocation;
+	//private Vector3 currentPlayerLocation;
+	private Vector3 destination;
 
     private int index;
 
@@ -53,7 +54,6 @@ public class EnemyController : MonoBehaviour {
     */
 
 	//control waves, increase amount they get stronger, spawn enemies
-
 	public void SpawnEnemy(float speedMulti, int spawnCaveIndex) {
 		Vector3 spawnLocation = spawnPoints [spawnCaveIndex];
 		//spawnLocation.x += Random.Range (-5, 5);
@@ -61,6 +61,7 @@ public class EnemyController : MonoBehaviour {
 		GameObject currentEnemy = Instantiate(enemyPrefab, spawnLocation, Quaternion.identity);
 		currentEnemy.GetComponent<EnemyMovement>().SetSpeed(speedMulti);
 		currentEnemy.GetComponent<EnemyMovement> ().SetPointVal (points);
+		currentEnemy.GetComponent<EnemyMovement> ().SetDestination (destination);
 		enemies.Add (currentEnemy.GetComponent<ObjectStatus> ());
     }
 
@@ -75,10 +76,12 @@ public class EnemyController : MonoBehaviour {
     private void Start() {
 		timeCounter += timeForSpawn;
         shortCounter += timeForSpawn;
-		timeLTCounter += timeLocationTracker;
+		//timeLTCounter += timeLocationTracker;
 		spawnPoints [0] = new Vector3 (-313f, 41f, 304f);
 		spawnPoints [1] = new Vector3 (-575f, 45f, -197f);
-		currentPlayerLocation = VRTK.VRTK_DeviceFinder.HeadsetTransform ().position;
+		//set destination to the flagpole
+		destination = new Vector3 (0.31f, 41.07f, -1.55f);
+		//currentPlayerLocation = VRTK.VRTK_DeviceFinder.HeadsetTransform ().position;
     }
 
 	private void Update() {
@@ -88,9 +91,10 @@ public class EnemyController : MonoBehaviour {
             StartCoroutine(SpawnWave());
 			enemyTotal += enemyAddition;
 			currentSpeed += speedMultiplier;
-			points += pointsInc;
+			//points += pointsInc;
 		}
-		if (Time.time >= timeLTCounter) {
+		//if tracking headset, uncomment out
+		/*if (Time.time >= timeLTCounter) {
 			if (currentPlayerLocation != VRTK.VRTK_DeviceFinder.HeadsetTransform ().position) {
 				for (int i = 0; i < enemies.Count; i++) {
 					currentPlayerLocation = VRTK.VRTK_DeviceFinder.HeadsetTransform ().position;
@@ -98,7 +102,7 @@ public class EnemyController : MonoBehaviour {
 				}
 			}
 			timeLTCounter += timeLocationTracker;
-		}
+		}*/
 	}
 
 	public List<ObjectStatus> GetEnemiesList () {

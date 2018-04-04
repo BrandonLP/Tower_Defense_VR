@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7823515bbe442559ec9ab9308580d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 0
+  _price: 10
 --- !u!114 &114770331600210470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -223,4 +223,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e67125ed75eb8468225c6f4c2e664c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseDamage: 10
+  _baseDamage: 35

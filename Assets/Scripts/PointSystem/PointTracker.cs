@@ -8,7 +8,7 @@ public class PointTracker : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		currentPoints = 0;
+		currentPoints = 10;
         textObj = GameObject.Find("PointDisplay").GetComponent<TextMesh>();
         textObj.text = currentPoints.ToString();
 	}
