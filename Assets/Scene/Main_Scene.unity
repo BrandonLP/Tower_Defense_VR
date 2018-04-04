@@ -3896,7 +3896,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4031323425233928, guid: bb1afed215363e8489cb546320dfaaec, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8.08
+      value: 9.8
       objectReference: {fileID: 0}
     - target: {fileID: 4031323425233928, guid: bb1afed215363e8489cb546320dfaaec, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3904,7 +3904,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4031323425233928, guid: bb1afed215363e8489cb546320dfaaec, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -7.17
+      value: -67
       objectReference: {fileID: 0}
     - target: {fileID: 4031323425233928, guid: bb1afed215363e8489cb546320dfaaec, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5012,14 +5012,14 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 3
   m_TerrainData: {fileID: 15600000, guid: abc2440072f55ef409bd60219f763aad, type: 2}
-  m_TreeDistance: 2000
-  m_TreeBillboardDistance: 750
-  m_TreeCrossFadeLength: 15
+  m_TreeDistance: 402
+  m_TreeBillboardDistance: 323
+  m_TreeCrossFadeLength: 0
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 161.4
+  m_DetailObjectDistance: 83
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 1
-  m_SplatMapDistance: 1000
+  m_HeightmapPixelError: 64
+  m_SplatMapDistance: 182
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
   m_DrawHeightmap: 1
@@ -5344,7 +5344,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &403543158
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5384,7 +5384,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 39
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -5408,13 +5408,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 403543157}
-  m_LocalRotation: {x: 0.029868362, y: -0.95483893, z: 0.10918652, w: 0.27471605}
-  m_LocalPosition: {x: 17.4, y: 61.27, z: 34.8}
+  m_LocalRotation: {x: -0.014737277, y: -0.9476469, z: 0.04420915, w: -0.3159015}
+  m_LocalPosition: {x: -23.4, y: 50.96, z: 28.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 12.998, y: -147.878, z: 0.17400001}
+  m_LocalEulerAnglesHint: {x: 5.3420005, y: -216.872, z: 0}
 --- !u!1001 &419081180
 Prefab:
   m_ObjectHideFlags: 0
@@ -22990,15 +22990,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4473606571437510, guid: 5c790e2c3342edb4784c5d0f9d7159f9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6.29
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 4473606571437510, guid: 5c790e2c3342edb4784c5d0f9d7159f9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 43.53
+      value: 43.54
       objectReference: {fileID: 0}
     - target: {fileID: 4473606571437510, guid: 5c790e2c3342edb4784c5d0f9d7159f9, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -9.61
+      value: -10.73
       objectReference: {fileID: 0}
     - target: {fileID: 4473606571437510, guid: 5c790e2c3342edb4784c5d0f9d7159f9, type: 2}
       propertyPath: m_LocalRotation.x
