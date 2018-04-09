@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1407229664}
-  m_IndirectSpecularColor: {r: 0.18228252, g: 0.2279897, b: 0.3073359, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -4007,6 +4007,10 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1624915504692156, guid: bb1afed215363e8489cb546320dfaaec, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb1afed215363e8489cb546320dfaaec, type: 2}
   m_IsPrefabParent: 0
@@ -4628,7 +4632,7 @@ Transform:
   - {fileID: 849380049}
   - {fileID: 271743075}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &271743074
 Prefab:
@@ -5415,7 +5419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &403543158
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5484,7 +5488,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 5.3420005, y: -216.872, z: 0}
 --- !u!1 &411296442
 GameObject:
@@ -23121,35 +23125,6 @@ Transform:
   m_Father: {fileID: 235481271}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1769072731 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1506424234018614, guid: 74e0bd883af3bd94ea8b9b08cb8da2be,
-    type: 2}
-  m_PrefabInternal: {fileID: 1725511724}
---- !u!114 &1769072734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1769072731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05588fb970f15834dbbd475a57264dbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1769072735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1769072731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19b64695216d4452cbd740a1eb7c8e79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentPoints: 0
-  textObj: {fileID: 173147942}
 --- !u!1001 &1777350431
 Prefab:
   m_ObjectHideFlags: 0
@@ -27723,7 +27698,7 @@ Transform:
   - {fileID: 1437381610}
   - {fileID: 1622937300}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2018877237
 Prefab:

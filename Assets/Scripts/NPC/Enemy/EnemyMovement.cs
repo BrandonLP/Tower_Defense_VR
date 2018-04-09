@@ -22,7 +22,8 @@ public class EnemyMovement : MonoBehaviour {
 	private void Start () {
 		_navMeshAgent = this.GetComponent<NavMeshAgent> ();
 		_navMeshAgent.speed *= _enemySpeed;
-		targetVector = VRTK.VRTK_DeviceFinder.HeadsetTransform ().position;
+		//targetVector = VRTK.VRTK_DeviceFinder.HeadsetTransform ().position;
+        targetVector = GameObject.Find("Main_Flag").transform.position;
 		amtOfPoints = 0;
 		if(_navMeshAgent == null)
 		{
