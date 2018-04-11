@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/*
+ * @author Stephanie Xie, Sabrina Ko
+ * 
+ * Tracks the current status of the object this script is attached to.
+ */
 public class ObjectStatus : MonoBehaviour {
     private ObjectHealth _health;
 

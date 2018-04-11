@@ -10,9 +10,11 @@ TagManager:
   - FxTemporaire
   - TeleportIgnore
   - controller
-  - Wall
   - Map Items
   - Sword
+  - WallHigh
+  - WallMedium
+  - WallLow
   layers:
   - Default
   - TransparentFX

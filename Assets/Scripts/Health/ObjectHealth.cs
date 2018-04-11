@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * @author Stephanie Xie
+ * 
+ * Health script.
+ */
 public class ObjectHealth : MonoBehaviour {
     [Tooltip("Current health value")]
     private float _currentHealth;
 
-    [SerializeField, Tooltip("Max health value")]
+    [Tooltip("Max health value")]
     private float _maxHealth = 100;
 
     [Tooltip("Health bar")]
@@ -36,41 +41,48 @@ public class ObjectHealth : MonoBehaviour {
     }
     #endregion
 
-    private void Start() {
+    private void Awake() {
         CurrentHealth = MaxHealth;
     }
 
-    /// <summary>Health value is equal to/more than the max health value.</summary>
+    // Health value is equal to/more than the max health value.
     public bool AtFullHealth() {
         return CurrentHealth >= MaxHealth;
     }
 
+    // Calculate current health percentage (for health bar).
     public float CalculateHealth() {
         return CurrentHealth / MaxHealth;
     }
 
-    /// <summary>Health value went down.</summary>
+    // Health value went down.
     public void Damage(float amount) {
         if (amount > 0 && !IsDead()) {
             CurrentHealth -= amount;
-            healthbar.value = CalculateHealth();
+            UpdateHealthbar();
             OnDamaged(amount);
         }
         if (IsDead()) OnDied();
     }
 
-    /// <summary>Health value went up.</summary>
+    // Health value went up.
     public void Heal(float amount) {
         if (amount > 0 && !AtFullHealth()) {
             CurrentHealth += amount;
-            healthbar.value = CalculateHealth();
+            UpdateHealthbar();
             OnHealed(amount);
         }
     }
 
-    /// <summary>Health value is equal to/less than zero.</summary>
+    // Health value is equal to/less than zero.
     public bool IsDead() {
         return CurrentHealth <= 0; 
+    }
+
+    public void UpdateHealthbar() {
+        if (healthbar != null) {
+            healthbar.value = CalculateHealth();
+        }
     }
 
     private void OnDamaged(float amount) {

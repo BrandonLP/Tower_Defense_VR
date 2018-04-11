@@ -227,7 +227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b890f78ca8e68445bdf88c99711318d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
   healthbar: {fileID: 114640333165075366}
 --- !u!114 &114277889051870062
 MonoBehaviour:
@@ -387,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89aa27ab4f369ba408918545d2b57009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseDamage: 25
+  _baseDamage: 15
 --- !u!136 &136738040821149840
 CapsuleCollider:
   m_ObjectHideFlags: 1
