@@ -42,6 +42,9 @@ public class EnemyController : MonoBehaviour {
 	//private Vector3 currentPlayerLocation;
 	private Vector3 destination;
 
+    //the physical size that the enemy gets bigger by
+    private float sizeUpScale = 0f;
+
     private int index;
 
 	/*
@@ -62,13 +65,13 @@ public class EnemyController : MonoBehaviour {
 		currentEnemy.GetComponent<EnemyMovement>().SetSpeed(speedMulti);
 		currentEnemy.GetComponent<EnemyMovement> ().SetPointVal (points);
 		currentEnemy.GetComponent<EnemyMovement> ().SetDestination (destination);
+        currentEnemy.transform.localScale += new Vector3(sizeUpScale, sizeUpScale, sizeUpScale);
 		enemies.Add (currentEnemy.GetComponent<ObjectStatus> ());
     }
 
-    private IEnumerator SpawnWave () {
+    private void SpawnWave (int ind) {
         for (int i = 0; i < enemyTotal; i++) {
             SpawnEnemy(currentSpeed, index);
-            yield return new WaitForSeconds(1);
         }
 
     }
@@ -88,11 +91,12 @@ public class EnemyController : MonoBehaviour {
 		if (Time.time >= timeCounter) {
             timeCounter += timeForSpawn;
             index = Random.Range (0, 2);
-            StartCoroutine(SpawnWave());
-			enemyTotal += enemyAddition;
+            SpawnWave(index);
+            enemyTotal += enemyAddition;
 			currentSpeed += speedMultiplier;
-			//points += pointsInc;
-		}
+            sizeUpScale += 1.5f;
+            //points += pointsInc;
+        }
 		//if tracking headset, uncomment out
 		/*if (Time.time >= timeLTCounter) {
 			if (currentPlayerLocation != VRTK.VRTK_DeviceFinder.HeadsetTransform ().position) {
