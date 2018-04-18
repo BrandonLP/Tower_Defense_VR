@@ -79,20 +79,13 @@ public class InstructionsController : MonoBehaviour {
     private void DoTouchpadReleased(object sender, ControllerInteractionEventArgs e) {
         if (instructionsGO.activeSelf && instructions.Current < 4) {
             instructions.NextInstruction();
-            print(instructions.Current);
         }
 
         if (instructions.Current == 3) {
-            print("should be 3");
-            print(instructions.Current);
-            print(instructions.Instructions[instructions.Current]);
             instructions.DisableInstructions();
         }
 
         if (instructions.Current == 4) {
-            print("should be 4");
-            print(instructions.Current);
-            print(instructions.Instructions[instructions.Current]);
             instructions.DisableInstructions();
             tutorialEnemyController.GetComponent<TutorialEnemyController>().enabled = true;
         }
@@ -105,17 +98,20 @@ public class InstructionsController : MonoBehaviour {
     }
 
     private void DoInteractGrab(object sender, ObjectInteractEventArgs e) {
+        /*
         if (e.target) {
             DebugInteractLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "GRABBING", e.target);
         }
-
-        if (e.target.tag == "Sword" && !_doInteractGrab) {
+        */
+        if (e.target.tag == "Weapon" && !_doInteractGrab) {
             _doInteractGrab = true;  // prevent "Using the TOUCHPAD..." from popping up if picking up sword again
             instructions.EnableInstructions(2);
         }
     }
 
+    /*
     private void DebugInteractLogger(uint index, string action, GameObject target) {
         VRTK_Logger.Info("Controller on index '" + index + "' is " + action + " an object named " + target.name);
     }
+    */
 }

@@ -15,6 +15,7 @@ TagManager:
   - WallHigh
   - WallMedium
   - WallLow
+  - Weapon
   layers:
   - Default
   - TransparentFX

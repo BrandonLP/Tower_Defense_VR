@@ -10,6 +10,9 @@ using UnityEngine.UI;
  * Tracks the current status of the object this script is attached to.
  */
 public class ObjectStatus : MonoBehaviour {
+
+    public GameObject enemyDeathEffectPrefab;
+
     private ObjectHealth _health;
 
     public delegate void DiedHandler();
@@ -36,6 +39,8 @@ public class ObjectStatus : MonoBehaviour {
                 //print(pts);
                 GameObject.Find("EnemyController").GetComponent<PointTracker>().AddPoints(1);
                 GameObject.Find("EnemyController").GetComponent<EnemyController>().GetEnemiesList().Remove(this.GetComponent<ObjectStatus>());
+
+                PlayEnemyDeathEffect();
             }
             Destroy(gameObject);
         }
@@ -43,6 +48,14 @@ public class ObjectStatus : MonoBehaviour {
 
     private void GameOver() {
         SceneManager.LoadScene("Scene/GameOver");
+    }
+
+    private void PlayEnemyDeathEffect() {
+        GameObject enemyDeathEffect = Instantiate(enemyDeathEffectPrefab, transform.position, Quaternion.identity) as GameObject;
+
+        // only want to play death effect once
+        ParticleSystem ps = enemyDeathEffect.GetComponent<ParticleSystem>();
+        Destroy(enemyDeathEffect, ps.duration - ps.startLifetime);
     }
 
     private void OnDied() {

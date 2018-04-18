@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using VRTK;
 
 public class TutorialEnemyController : MonoBehaviour {
     public GameObject enemyPrefab;

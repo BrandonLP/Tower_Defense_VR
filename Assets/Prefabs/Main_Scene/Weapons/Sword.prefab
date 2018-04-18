@@ -22,16 +22,18 @@ GameObject:
   - component: {fileID: 33653169675172880}
   - component: {fileID: 23543130946321810}
   - component: {fileID: 54449088117959492}
+  - component: {fileID: 65396397412994430}
   - component: {fileID: 114451057348572630}
+  - component: {fileID: 114883069066414598}
   - component: {fileID: 114770331600210470}
   - component: {fileID: 114254103180382856}
-  - component: {fileID: 65396397412994430}
-  - component: {fileID: 114302960216672404}
+  - component: {fileID: 114432904187866126}
   - component: {fileID: 114850944361174626}
+  - component: {fileID: 114464673735643600}
   - component: {fileID: 114495180198970364}
   m_Layer: 0
   m_Name: Sword
-  m_TagString: Sword
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,16 +140,16 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 2
-  grabAttachMechanicScript: {fileID: 114302960216672404}
+  grabAttachMechanicScript: {fileID: 114883069066414598}
   secondaryGrabActionScript: {fileID: 114770331600210470}
   isUsable: 0
-  holdButtonToUse: 1
+  holdButtonToUse: 0
   useOnlyIfGrabbed: 0
   pointerActivatesUseAction: 0
   useOverrideButton: 0
   allowedUseControllers: 2
   usingState: 0
---- !u!114 &114302960216672404
+--- !u!114 &114432904187866126
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -155,17 +157,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1754268340399402}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
+  m_Script: {fileID: 11500000, guid: 817f15b2a0426974bb4e88ef34aa22b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1
-  onGrabCollisionDelay: 0
-  destroyImmediatelyOnThrow: 1
-  breakForce: 15000000
+  hideControllerOnTouch: 0
+  hideDelayOnTouch: 0
+  hideControllerOnGrab: 1
+  hideDelayOnGrab: 0
+  hideControllerOnUse: 0
+  hideDelayOnUse: 0
 --- !u!114 &114451057348572630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,13 +182,25 @@ MonoBehaviour:
   durationOnTouch: 0
   intervalOnTouch: 0.05
   clipOnGrab: {fileID: 0}
-  strengthOnGrab: 0
-  durationOnGrab: 0
+  strengthOnGrab: 1
+  durationOnGrab: 0.05
   intervalOnGrab: 0.05
   clipOnUse: {fileID: 0}
   strengthOnUse: 0
   durationOnUse: 0
   intervalOnUse: 0.05
+--- !u!114 &114464673735643600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1754268340399402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fab99837e330484d9b8c711994fd7f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
 --- !u!114 &114495180198970364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,3 +236,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseDamage: 35
+--- !u!114 &114883069066414598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1754268340399402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0

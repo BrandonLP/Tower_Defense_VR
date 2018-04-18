@@ -25,15 +25,17 @@ GameObject:
   - component: {fileID: 54999210430633148}
   - component: {fileID: 65349366466112598}
   - component: {fileID: 65174617154021178}
-  - component: {fileID: 114773376456294528}
   - component: {fileID: 114983296075143318}
-  - component: {fileID: 114823911937767642}
-  - component: {fileID: 114856091025242814}
-  - component: {fileID: 114113802715371934}
+  - component: {fileID: 114971673082161166}
   - component: {fileID: 114677913233575752}
+  - component: {fileID: 114856091025242814}
+  - component: {fileID: 114622650496624990}
+  - component: {fileID: 114773376456294528}
+  - component: {fileID: 114612365716680504}
+  - component: {fileID: 114113802715371934}
   m_Layer: 0
   m_Name: AXE
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,6 +163,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _price: 30
+--- !u!114 &114612365716680504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1254578691579068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fab99837e330484d9b8c711994fd7f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+--- !u!114 &114622650496624990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1254578691579068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817f15b2a0426974bb4e88ef34aa22b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideControllerOnTouch: 0
+  hideDelayOnTouch: 0
+  hideControllerOnGrab: 1
+  hideDelayOnGrab: 0
+  hideControllerOnUse: 0
+  hideDelayOnUse: 0
 --- !u!114 &114677913233575752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -184,25 +215,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseDamage: 55
---- !u!114 &114823911937767642
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1254578691579068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1
-  onGrabCollisionDelay: 0
-  destroyImmediatelyOnThrow: 1
-  breakForce: 1.5e+12
 --- !u!114 &114856091025242814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -215,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableWhenIdle: 1
-  touchHighlightColor: {r: 0, g: 1, b: 0.08965492, a: 0}
+  touchHighlightColor: {r: 0, g: 1, b: 0.09019608, a: 0}
   allowedTouchControllers: 2
   ignoredColliders: []
   isGrabbable: 1
@@ -224,15 +236,32 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 2
-  grabAttachMechanicScript: {fileID: 114823911937767642}
+  grabAttachMechanicScript: {fileID: 114971673082161166}
   secondaryGrabActionScript: {fileID: 114677913233575752}
   isUsable: 0
-  holdButtonToUse: 1
+  holdButtonToUse: 0
   useOnlyIfGrabbed: 0
   pointerActivatesUseAction: 0
   useOverrideButton: 0
-  allowedUseControllers: 0
+  allowedUseControllers: 2
   usingState: 0
+--- !u!114 &114971673082161166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1254578691579068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
 --- !u!114 &114983296075143318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,8 +278,8 @@ MonoBehaviour:
   durationOnTouch: 0
   intervalOnTouch: 0.05
   clipOnGrab: {fileID: 0}
-  strengthOnGrab: 0
-  durationOnGrab: 0
+  strengthOnGrab: 1
+  durationOnGrab: 0.05
   intervalOnGrab: 0.05
   clipOnUse: {fileID: 0}
   strengthOnUse: 0
