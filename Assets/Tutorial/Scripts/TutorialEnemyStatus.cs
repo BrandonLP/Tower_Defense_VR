@@ -5,11 +5,15 @@ using VRTK;
 
 public class TutorialEnemyStatus : MonoBehaviour {
 
+    public AudioClip deathClip;
+
     public GameObject deathEffectPrefab;
 
     private ObjectHealth _health;
 
     private InstructionsOnClick instructions;
+
+    private bool destroyObject;
 
     public delegate void DiedHandler();
     public event DiedHandler Died;
@@ -24,10 +28,17 @@ public class TutorialEnemyStatus : MonoBehaviour {
         Health.Died += Die;
     }
         
+    private void Update() {
+        if (destroyObject)
+            Destroy(gameObject);
+    }
+        
     private void Die() {
         OnDied();
+
+        AudioSource.PlayClipAtPoint(deathClip, transform.position);
         PlayDeathEffect();
-        Destroy(gameObject);
+        destroyObject = true;
 
         instructions = GameObject.Find("UIFollower").transform.GetChild(0).GetChild(1).GetChild(0).gameObject.GetComponent<InstructionsOnClick>();
         instructions.EnableInstructions(4);

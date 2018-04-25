@@ -4128,6 +4128,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a2670f54a63492e409b478f367ce9fcc, type: 3}
   m_IsPrefabParent: 0
+--- !u!1001 &136447048
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4774497101405884, guid: f2db55fb8b96ddb4c9699d401e90c736, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.12668055
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774497101405884, guid: f2db55fb8b96ddb4c9699d401e90c736, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 47.25876
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774497101405884, guid: f2db55fb8b96ddb4c9699d401e90c736, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -4.747807
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774497101405884, guid: f2db55fb8b96ddb4c9699d401e90c736, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774497101405884, guid: f2db55fb8b96ddb4c9699d401e90c736, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774497101405884, guid: f2db55fb8b96ddb4c9699d401e90c736, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774497101405884, guid: f2db55fb8b96ddb4c9699d401e90c736, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774497101405884, guid: f2db55fb8b96ddb4c9699d401e90c736, type: 2}
+      propertyPath: m_RootOrder
+      value: 50
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f2db55fb8b96ddb4c9699d401e90c736, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &140136500
 Prefab:
   m_ObjectHideFlags: 0
@@ -7098,6 +7140,11 @@ Prefab:
       propertyPath: controller
       value: 
       objectReference: {fileID: 334937488}
+    - target: {fileID: 82854305036128032, guid: e06376d18f4593f4fbe8b610dabd680d,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e06376d18f4593f4fbe8b610dabd680d, type: 2}
   m_IsPrefabParent: 0
@@ -9880,6 +9927,11 @@ Prefab:
       propertyPath: controller
       value: 
       objectReference: {fileID: 334937488}
+    - target: {fileID: 82474299848384444, guid: 14c0db958d4c52e46b843da58494a263,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 14c0db958d4c52e46b843da58494a263, type: 2}
   m_IsPrefabParent: 0
@@ -13616,6 +13668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bed96a0a4d0115418ed01ddf0a799a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathClip: {fileID: 0}
   enemyDeathEffectPrefab: {fileID: 0}
 --- !u!114 &989307038
 MonoBehaviour:
@@ -25080,115 +25133,6 @@ Transform:
   m_Father: {fileID: 235481271}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1764650881
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1764650883}
-  - component: {fileID: 1764650882}
-  m_Layer: 0
-  m_Name: Audio Source
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &1764650882
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1764650881}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 717c9634e918ccc46abd0398662ce0e2, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 29.445656
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
---- !u!4 &1764650883
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1764650881}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.8, y: 44.428795, z: -4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 50
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1766135005
 GameObject:
   m_ObjectHideFlags: 0
@@ -25694,6 +25638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bed96a0a4d0115418ed01ddf0a799a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathClip: {fileID: 0}
   enemyDeathEffectPrefab: {fileID: 0}
 --- !u!114 &1813359329
 MonoBehaviour:

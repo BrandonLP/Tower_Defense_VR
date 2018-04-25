@@ -11,9 +11,13 @@ using UnityEngine.UI;
  */
 public class ObjectStatus : MonoBehaviour {
 
+    public AudioClip deathClip;
+
     public GameObject enemyDeathEffectPrefab;
 
     private ObjectHealth _health;
+
+    private bool destroyObject;
 
     public delegate void DiedHandler();
     public event DiedHandler Died;
@@ -27,7 +31,12 @@ public class ObjectStatus : MonoBehaviour {
         Health = GetComponent<ObjectHealth>();
         Health.Died += Die;
     }
-    
+
+    private void Update() {
+        if (destroyObject)
+            Destroy(gameObject);
+    }
+
     private void Die() {
         OnDied();
 
@@ -35,19 +44,25 @@ public class ObjectStatus : MonoBehaviour {
             GameOver();
         } else {
             if (gameObject.tag == "Enemy") {
-                int pts = this.GetComponent<EnemyMovement>().GetPointVal();
-                //print(pts);
-                GameObject.Find("EnemyController").GetComponent<PointTracker>().AddPoints(1);
-                GameObject.Find("EnemyController").GetComponent<EnemyController>().GetEnemiesList().Remove(this.GetComponent<ObjectStatus>());
-
-                PlayEnemyDeathEffect();
+                EnemyDied();
             }
-            Destroy(gameObject);
+            destroyObject = true;
         }
     }
 
     private void GameOver() {
         SceneManager.LoadScene("Scene/GameOver");
+    }
+
+    private void EnemyDied() {
+        int pts = this.GetComponent<EnemyMovement>().GetPointVal();
+        //print(pts);
+        GameObject.Find("EnemyController").GetComponent<PointTracker>().AddPoints(1);
+        GameObject.Find("EnemyController").GetComponent<EnemyController>().GetEnemiesList().Remove(this.GetComponent<ObjectStatus>());
+
+        AudioSource.PlayClipAtPoint(deathClip, transform.position);
+        PlayEnemyDeathEffect();
+        destroyObject = true;
     }
 
     private void PlayEnemyDeathEffect() {
