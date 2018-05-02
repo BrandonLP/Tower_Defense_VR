@@ -141,10 +141,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 180
-  stateChangeValue: 60
   wallPartMedium: {fileID: 1615037544375798}
   wallPartLow: {fileID: 1052978863505182, guid: d6a6603e3fa086047ad5288a2fb51242,
     type: 2}
+  crumblingSound: {fileID: 8300000, guid: 5e5711194ca1a45468de36ce0f9a6444, type: 3}
 --- !u!114 &114820736061869832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -156,6 +156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bed96a0a4d0115418ed01ddf0a799a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathClip: {fileID: 0}
+  enemyDeathEffectPrefab: {fileID: 0}
 --- !u!208 &208780654635114294
 NavMeshObstacle:
   m_ObjectHideFlags: 1

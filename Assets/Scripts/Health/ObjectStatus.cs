@@ -11,6 +11,7 @@ using UnityEngine.UI;
  */
 public class ObjectStatus : MonoBehaviour {
 
+    public AudioClip crumblingSound;
     public AudioClip deathClip;
 
     public GameObject enemyDeathEffectPrefab;
@@ -46,6 +47,9 @@ public class ObjectStatus : MonoBehaviour {
             if (gameObject.tag == "Enemy") {
                 EnemyDied();
             }
+            if (gameObject.tag == "WallLow") {
+                AudioSource.PlayClipAtPoint(crumblingSound, transform.position, 1f);
+            }
             destroyObject = true;
         }
     }
@@ -60,7 +64,7 @@ public class ObjectStatus : MonoBehaviour {
         GameObject.Find("EnemyController").GetComponent<PointTracker>().AddPoints(1);
         GameObject.Find("EnemyController").GetComponent<EnemyController>().GetEnemiesList().Remove(this.GetComponent<ObjectStatus>());
 
-        AudioSource.PlayClipAtPoint(deathClip, transform.position);
+        AudioSource.PlayClipAtPoint(deathClip, transform.position, 1f);
         PlayEnemyDeathEffect();
         destroyObject = true;
     }
@@ -74,6 +78,7 @@ public class ObjectStatus : MonoBehaviour {
     }
 
     private void OnDied() {
+        print("should be dead?");
         if (Died != null) Died();
     }
 }

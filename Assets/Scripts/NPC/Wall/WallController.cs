@@ -19,6 +19,8 @@ public class WallController : MonoBehaviour {
     private Vector3 _wallPartPosition;
     private Quaternion _wallPartRotation;
 
+    public AudioClip crumblingSound;
+    //private AudioSource audioSource;
 
     #region Properties
     public ObjectHealth WallPartHealth {
@@ -40,6 +42,8 @@ public class WallController : MonoBehaviour {
     private void Awake() {
         WallPartHealth = GetComponent<ObjectHealth>();
         WallPartHealth.MaxHealth = maxHealth;
+
+        //audioSource = GetComponent<AudioSource>();
     }
 
     /*
@@ -82,6 +86,7 @@ public class WallController : MonoBehaviour {
 
     // Change appearance of wall part
     public void ChangeAppearance(GameObject newState) {
+        AudioSource.PlayClipAtPoint(crumblingSound, transform.position, 1f);
         Destroy(gameObject);
         Instantiate(newState, WallPartPosition, WallPartRotation);
     }

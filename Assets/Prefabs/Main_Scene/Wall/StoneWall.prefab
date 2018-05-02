@@ -275,7 +275,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6fcac28255c6e924b90f955ae4545d57, type: 2}
+  - {fileID: 2100000, guid: 3bb9a6bf50399124490f46345aba5871, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -309,7 +309,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6fcac28255c6e924b90f955ae4545d57, type: 2}
+  - {fileID: 2100000, guid: dbf7ed4601a5cdf4695c7348325c458e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -343,7 +343,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6fcac28255c6e924b90f955ae4545d57, type: 2}
+  - {fileID: 2100000, guid: 3bb9a6bf50399124490f46345aba5871, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -377,7 +377,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6fcac28255c6e924b90f955ae4545d57, type: 2}
+  - {fileID: 2100000, guid: dbf7ed4601a5cdf4695c7348325c458e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -411,7 +411,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6fcac28255c6e924b90f955ae4545d57, type: 2}
+  - {fileID: 2100000, guid: 3bb9a6bf50399124490f46345aba5871, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -445,7 +445,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6fcac28255c6e924b90f955ae4545d57, type: 2}
+  - {fileID: 2100000, guid: 3bb9a6bf50399124490f46345aba5871, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -704,6 +704,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bed96a0a4d0115418ed01ddf0a799a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathClip: {fileID: 0}
+  enemyDeathEffectPrefab: {fileID: 0}
 --- !u!114 &114061774752255470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -716,11 +718,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 180
-  stateChangeValue: 120
   wallPartMedium: {fileID: 1615037544375798, guid: 1c4e330406ba0e54dba1a3008db03113,
     type: 2}
   wallPartLow: {fileID: 1052978863505182, guid: d6a6603e3fa086047ad5288a2fb51242,
     type: 2}
+  crumblingSound: {fileID: 8300000, guid: 5e5711194ca1a45468de36ce0f9a6444, type: 3}
 --- !u!114 &114123176539766946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -745,11 +747,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 180
-  stateChangeValue: 120
   wallPartMedium: {fileID: 1615037544375798, guid: 1c4e330406ba0e54dba1a3008db03113,
     type: 2}
   wallPartLow: {fileID: 1052978863505182, guid: d6a6603e3fa086047ad5288a2fb51242,
     type: 2}
+  crumblingSound: {fileID: 8300000, guid: 5e5711194ca1a45468de36ce0f9a6444, type: 3}
 --- !u!114 &114293621343052298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -773,6 +775,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bed96a0a4d0115418ed01ddf0a799a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathClip: {fileID: 0}
+  enemyDeathEffectPrefab: {fileID: 0}
 --- !u!114 &114333301134944856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -784,6 +788,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bed96a0a4d0115418ed01ddf0a799a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathClip: {fileID: 0}
+  enemyDeathEffectPrefab: {fileID: 0}
 --- !u!114 &114370550386594832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -795,6 +801,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bed96a0a4d0115418ed01ddf0a799a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathClip: {fileID: 0}
+  enemyDeathEffectPrefab: {fileID: 0}
 --- !u!114 &114443651004534712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -807,11 +815,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 180
-  stateChangeValue: 120
   wallPartMedium: {fileID: 1615037544375798, guid: 1c4e330406ba0e54dba1a3008db03113,
     type: 2}
   wallPartLow: {fileID: 1052978863505182, guid: d6a6603e3fa086047ad5288a2fb51242,
     type: 2}
+  crumblingSound: {fileID: 8300000, guid: 5e5711194ca1a45468de36ce0f9a6444, type: 3}
 --- !u!114 &114451655401458526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -823,6 +831,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bed96a0a4d0115418ed01ddf0a799a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathClip: {fileID: 0}
+  enemyDeathEffectPrefab: {fileID: 0}
 --- !u!114 &114500638077157800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -846,6 +856,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bed96a0a4d0115418ed01ddf0a799a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathClip: {fileID: 0}
+  enemyDeathEffectPrefab: {fileID: 0}
 --- !u!114 &114555793468311630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -858,11 +870,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 180
-  stateChangeValue: 120
   wallPartMedium: {fileID: 1615037544375798, guid: 1c4e330406ba0e54dba1a3008db03113,
     type: 2}
   wallPartLow: {fileID: 1052978863505182, guid: d6a6603e3fa086047ad5288a2fb51242,
     type: 2}
+  crumblingSound: {fileID: 8300000, guid: 5e5711194ca1a45468de36ce0f9a6444, type: 3}
 --- !u!114 &114612600055591606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -899,11 +911,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 180
-  stateChangeValue: 120
   wallPartMedium: {fileID: 1615037544375798, guid: 1c4e330406ba0e54dba1a3008db03113,
     type: 2}
   wallPartLow: {fileID: 1052978863505182, guid: d6a6603e3fa086047ad5288a2fb51242,
     type: 2}
+  crumblingSound: {fileID: 8300000, guid: 5e5711194ca1a45468de36ce0f9a6444, type: 3}
 --- !u!114 &114899186846757018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -916,11 +928,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 180
-  stateChangeValue: 120
   wallPartMedium: {fileID: 1615037544375798, guid: 1c4e330406ba0e54dba1a3008db03113,
     type: 2}
   wallPartLow: {fileID: 1052978863505182, guid: d6a6603e3fa086047ad5288a2fb51242,
     type: 2}
+  crumblingSound: {fileID: 8300000, guid: 5e5711194ca1a45468de36ce0f9a6444, type: 3}
 --- !u!208 &208072486212256456
 NavMeshObstacle:
   m_ObjectHideFlags: 1

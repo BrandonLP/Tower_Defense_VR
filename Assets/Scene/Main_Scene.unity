@@ -4048,7 +4048,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4031323425233928, guid: bb1afed215363e8489cb546320dfaaec, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9.8
+      value: -42.9
       objectReference: {fileID: 0}
     - target: {fileID: 4031323425233928, guid: bb1afed215363e8489cb546320dfaaec, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4056,7 +4056,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4031323425233928, guid: bb1afed215363e8489cb546320dfaaec, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -67
+      value: -0.41
       objectReference: {fileID: 0}
     - target: {fileID: 4031323425233928, guid: bb1afed215363e8489cb546320dfaaec, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4092,6 +4092,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114055581230880082, guid: bb1afed215363e8489cb546320dfaaec,
+        type: 2}
+      propertyPath: deathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6373aeb8fda094662915d53df32b8cb8, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb1afed215363e8489cb546320dfaaec, type: 2}
   m_IsPrefabParent: 0
@@ -7434,36 +7439,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 23470425141617080, guid: ac133325904801949a894ba8a6be736f,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3bb9a6bf50399124490f46345aba5871, type: 3}
-    - target: {fileID: 23902891803694346, guid: ac133325904801949a894ba8a6be736f,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3bb9a6bf50399124490f46345aba5871, type: 3}
-    - target: {fileID: 23183153019971466, guid: ac133325904801949a894ba8a6be736f,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: dbf7ed4601a5cdf4695c7348325c458e, type: 2}
-    - target: {fileID: 23415101971885366, guid: ac133325904801949a894ba8a6be736f,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: dbf7ed4601a5cdf4695c7348325c458e, type: 2}
-    - target: {fileID: 23357929803908286, guid: ac133325904801949a894ba8a6be736f,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3bb9a6bf50399124490f46345aba5871, type: 3}
-    - target: {fileID: 23130994019282470, guid: ac133325904801949a894ba8a6be736f,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3bb9a6bf50399124490f46345aba5871, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac133325904801949a894ba8a6be736f, type: 2}
   m_IsPrefabParent: 0
@@ -11437,6 +11412,7 @@ MonoBehaviour:
   maxHealth: 200
   wallPartMedium: {fileID: 1462621118}
   wallPartLow: {fileID: 1462621118}
+  crumblingSound: {fileID: 0}
 --- !u!114 &989307036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11460,6 +11436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bed96a0a4d0115418ed01ddf0a799a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crumblingSound: {fileID: 0}
   deathClip: {fileID: 0}
   enemyDeathEffectPrefab: {fileID: 0}
 --- !u!114 &989307038
@@ -11773,6 +11750,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114591215405361844, guid: 1c4e330406ba0e54dba1a3008db03113,
+        type: 2}
+      propertyPath: crumblingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f76daae1094a8241b4892da3cb7813c, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c4e330406ba0e54dba1a3008db03113, type: 2}
   m_IsPrefabParent: 0
@@ -21933,6 +21915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bed96a0a4d0115418ed01ddf0a799a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crumblingSound: {fileID: 0}
   deathClip: {fileID: 0}
   enemyDeathEffectPrefab: {fileID: 0}
 --- !u!114 &1813359329
@@ -21961,6 +21944,7 @@ MonoBehaviour:
   maxHealth: 200
   wallPartMedium: {fileID: 1813359323}
   wallPartLow: {fileID: 1813359323}
+  crumblingSound: {fileID: 0}
 --- !u!114 &1813359331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22591,6 +22575,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114040476368914770, guid: d6a6603e3fa086047ad5288a2fb51242,
+        type: 2}
+      propertyPath: crumblingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f76daae1094a8241b4892da3cb7813c, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d6a6603e3fa086047ad5288a2fb51242, type: 2}
   m_IsPrefabParent: 0
